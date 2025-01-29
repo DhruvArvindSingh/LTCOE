@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react'; 
 import Job_main from './pages/Job_main'; 
 import JobDetailsPage from './pages/JobDetailsPage'; 
+import Chatbot from './pages/Chatbot'; 
 import Navbar from './components/Navbar'; 
 import Dashboard from "./dashboard/index.jsx";
 import ViewResume from "./my-resume/view/index.jsx";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/resume" element={<Dashboard />} /> 
         <Route path="/resume/edit" element={<EditResume />} /> 
         <Route path="/resume/:email/:resumeId/view" element={<ViewResume />} /> 
+        <Route path="/chatbot" element={<Chatbot />} /> 
       </Routes>
 
     </Router>
