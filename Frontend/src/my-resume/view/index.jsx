@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { app } from "../../utils/firebase_config";
 import { LoaderCircle } from "lucide-react";
+import Navbar from '../../components/landingage/Navbar';
+import Footer from '../../components/landingage/Footer';
 
 const ViewResume = () => {
   const [resumeInfo, setResumeInfo] = useState(null);
@@ -77,6 +79,7 @@ const ViewResume = () => {
 
   return (
     <ResumeContext.Provider value={{ resumeInfo, setResumeInfo }}>
+      <Navbar />
       <div id="no-print">
 
         <div className="my-5 mx-10 md:mx-20 lg:mx-36">
@@ -105,6 +108,7 @@ const ViewResume = () => {
 
 
       </div>
+      <Footer />
     </ResumeContext.Provider>
   );
 };

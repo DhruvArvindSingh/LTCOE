@@ -1,7 +1,8 @@
 
 import React, {useState} from "react"
 import { useNavigate } from "react-router-dom";
-
+import Navbar from '../components/landingage/Navbar';
+import Footer from '../components/landingage/Footer';
 import "../css/Signup_Login.css"
 
 const Signin = () => {
@@ -44,6 +45,8 @@ const Signin = () => {
     }
 
     return (
+        <>
+        <Navbar/>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form class="form" action="#">
@@ -90,7 +93,8 @@ const Signin = () => {
                 </div>
             </div>
         </div>
-
+        <Footer/>
+        </>
     )
 }
 export default Signin

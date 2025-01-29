@@ -3,6 +3,8 @@ import axios from "axios";
 import JobCard from "../components/JobCard";
 import Pagination from "../components/Pagination";
 import Skeleton from "../components/HomeSkeleton";
+import Navbar from '../components/landingage/Navbar';
+import Footer from '../components/landingage/Footer';
 
 const Job_main = ({ searchParams }) => {
   const [jobs, setJobs] = useState([]);
@@ -18,9 +20,8 @@ const Job_main = ({ searchParams }) => {
       try {
         const response = await axios.get("https://jsearch.p.rapidapi.com/search", {
           params: {
-            query: `${searchParams.jobTitle || "developer"} in ${
-              searchParams.location || "anywhere"
-            }`,
+            query: `${searchParams.jobTitle || "developer"} in ${searchParams.location || "anywhere"
+              }`,
             date_posted: searchParams.datePosted || "all",
             page: currentPage,
           },
@@ -56,20 +57,24 @@ const Job_main = ({ searchParams }) => {
   }, [searchParams, currentPage]);
 
   return (
-    <div className="container mx-auto mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-        {loading ? (
-          Array.from({ length: 8 }, (_, index) => <Skeleton key={index} />)
-        ) : error ? (
-          <p className="text-red-500">{error}</p>
-        ) : jobs.length > 0 ? (
-          jobs.map((job) => <JobCard key={job.job_id} job={job} />)
-        ) : (
-          <p>No jobs found</p>
-        )}
+    <>
+      <Navbar />
+      <div className="container mx-auto mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+          {loading ? (
+            Array.from({ length: 8 }, (_, index) => <Skeleton key={index} />)
+          ) : error ? (
+            <p className="text-red-500">{error}</p>
+          ) : jobs.length > 0 ? (
+            jobs.map((job) => <JobCard key={job.job_id} job={job} />)
+          ) : (
+            <p>No jobs found</p>
+          )}
+        </div>
+        <Pagination currentPage={currentPage} onPageChange={setCurrentPage} />
       </div>
-      <Pagination currentPage={currentPage} onPageChange={setCurrentPage} />
-    </div>
+      <Footer/>
+    </>
   );
 };
 

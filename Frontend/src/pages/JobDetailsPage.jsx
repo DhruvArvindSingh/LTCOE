@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import JobSkeleton from '../components/JobdetailsSkeleton'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Navbar from '../components/landingage/Navbar';
+import Footer from '../components/landingage/Footer';
 
 const JobDetailsPage = () => { 
   const { id } = useParams(); 
@@ -38,6 +40,7 @@ const JobDetailsPage = () => {
 
   return (
     <> 
+    <Navbar/>
     <div className="container mx-auto mt-16 p-8"> 
       <button 
         className="bg-purple-500 text-white p-2 rounded mb-4 px-4 flex shadow-md"
@@ -63,6 +66,7 @@ const JobDetailsPage = () => {
    >
      Apply Now<FaArrowRight className='mt-[14px] text-xl'/> 
    </a>
+   <Footer/>
    </>
   );
 };

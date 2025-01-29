@@ -4,6 +4,10 @@ import aibotimg from "../assets/aibotimg.png";
 import user from "../assets/user.png"
 import img from "../assets/img.svg"
 import submit from "../assets/submit.svg"
+import Navbar from '../components/landingage/Navbar';
+import Footer from '../components/landingage/Footer';
+
+
 const Chatbot = () => {
   const [prompt, setPrompt] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
@@ -61,39 +65,40 @@ const Chatbot = () => {
 
   const createChatBox = (message, isUser, file = null) => {
     return (
-      <div
-        className={`mt-3 w-full md:w-3/5 flex ${
-          isUser ? "flex-row-reverse ml-auto mb-6" : "mt-4"
-        } items-center gap-3`}
-      >
-        <img
-          src={isUser ? user : aibotimg}
-          alt="User or AI"
-          className="bg-white rounded-full drop-shadow-md"
-          style={{ width: 50, height: 50 }}
-        />
+      <>
+      <Navbar/>
         <div
-          className={`p-4 ${
-            isUser ? "bg-black text-white" : "bg-gray-200"
-          }`}
-          style={{
-            borderRadius: isUser
-              ? "40px 0px 40px 40px"
-              : "0px 40px 40px 40px",
-            boxShadow: "2px 2px 10px black",
-          }}
+          className={`mt-3 w-full md:w-3/5 flex ${isUser ? "flex-row-reverse ml-auto mb-6" : "mt-4"
+            } items-center gap-3`}
         >
-          {message && <div className={isUser ? "" : "ai-chat"}>{message}</div>}
-          {file && (
-            <img
-              src={`data:${file.mime_type};base64,${file.data}`}
-              className="chooseimg mt-2"
-              alt="uploaded"
-              style={{ maxWidth: "200px", borderRadius: "8px" }}
-            />
-          )}
+          <img
+            src={isUser ? user : aibotimg}
+            alt="User or AI"
+            className="bg-white rounded-full drop-shadow-md"
+            style={{ width: 50, height: 50 }}
+          />
+          <div
+            className={`p-4 ${isUser ? "bg-black text-white" : "bg-gray-200"
+              }`}
+            style={{
+              borderRadius: isUser
+                ? "40px 0px 40px 40px"
+                : "0px 40px 40px 40px",
+              boxShadow: "2px 2px 10px black",
+            }}
+          >
+            {message && <div className={isUser ? "" : "ai-chat"}>{message}</div>}
+            {file && (
+              <img
+                src={`data:${file.mime_type};base64,${file.data}`}
+                className="chooseimg mt-2"
+                alt="uploaded"
+                style={{ maxWidth: "200px", borderRadius: "8px" }}
+              />
+            )}
+          </div>
         </div>
-      </div>
+      </>
     );
   };
 
@@ -158,12 +163,13 @@ const Chatbot = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="bg-black h-[100vh]">
       <div
-        className="text-center text-white text-4xl md:text-5xl font-semibold py-4"
+        className="text-center text-white text-4xl md:text-5xl font-semibold bg-black py-1"
         style={{ fontFamily: "Courier New, Courier, monospace" }}
       >
-        AI Chatbot
       </div>
 
       <div className="chat-container w-[95%] md:w-[90%] h-[50vh] md:h-[70vh] bg-white my-4 rounded-3xl mx-auto p-5 overflow-y-auto">
@@ -214,6 +220,8 @@ const Chatbot = () => {
         </button>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
