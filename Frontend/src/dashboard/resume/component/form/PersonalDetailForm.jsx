@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ResumeContext } from "@/context/ResumeContext";
+import { Button } from "../../../../components/ui/button";
+import { Input } from "../../../../components/ui/input";
+import { ResumeContext } from "../../../../context/ResumeContext";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "@/utils/firebase_config";
+import { app } from "../../../../utils/firebase_config";
 
 const PersonalDetailForm = ({ resumeId, email, enableNext }) => {
   const { resumeInfo, setResumeInfo } = useContext(ResumeContext);

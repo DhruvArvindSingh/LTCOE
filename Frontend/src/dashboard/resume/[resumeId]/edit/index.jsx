@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import FormSection from "../../component/FormSection";
 import ResumePreview from "../../component/ResumePreview";
-import { ResumeContext } from "@/context/ResumeContext";
+import { ResumeContext } from "../../../../context/ResumeContext";
 
 const EditResume = () => {
   // Hardcoding the resume info for demonstration
@@ -45,7 +45,7 @@ const EditResume = () => {
 
   return (
     <ResumeContext.Provider value={{ resumeInfo, setResumeInfo }}>
-      <div className="grid grid-cols-1 md:grid-cols-2 p-10 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 p-10 gap-10 mt-[100px]">
         <FormSection />
         <ResumePreview />
       </div>

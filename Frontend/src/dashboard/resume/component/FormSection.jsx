@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import PersonalDetailForm from "./form/PersonalDetailForm";
 import { ArrowLeft, ArrowRight, Home } from "lucide-react";
 import { useState } from "react";

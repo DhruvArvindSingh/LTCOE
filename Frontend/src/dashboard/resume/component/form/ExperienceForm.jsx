@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../../../../components/ui/button";
+import { Input } from "../../../../components/ui/input";
 import { useContext, useEffect, useState } from "react";
 import RichTextEditor from "../RichTextEditor";
-import { ResumeContext } from "@/context/ResumeContext";
+import { ResumeContext } from "../../../../context/ResumeContext";
 import { toast } from "sonner";
 import { LoaderCircle } from "lucide-react";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "@/utils/firebase_config";
+import { app } from "../../../../utils/firebase_config";
 
 const formField = {
   title: "",

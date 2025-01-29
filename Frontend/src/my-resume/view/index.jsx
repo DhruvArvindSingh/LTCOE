@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { ResumeContext } from "@/context/ResumeContext";
-import ResumePreview from "@/dashboard/resume/component/ResumePreview";
+import { Button } from "../../components/ui/button";
+import { ResumeContext } from "../../context/ResumeContext";
+import ResumePreview from "../../dashboard/resume/component/ResumePreview";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { app } from "@/utils/firebase_config";
+import { app } from "../../utils/firebase_config";
 import { LoaderCircle } from "lucide-react";
 
 const ViewResume = () => {

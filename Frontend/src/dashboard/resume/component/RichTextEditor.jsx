@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Button } from "@/components/ui/button";
-import { ResumeContext } from "@/context/ResumeContext";
+import { Button } from "../../../components/ui/button";
+import { ResumeContext } from "../../../context/ResumeContext";
 import { Brain, Loader2 } from "lucide-react";
 import { useContext, useState } from "react";
 import {

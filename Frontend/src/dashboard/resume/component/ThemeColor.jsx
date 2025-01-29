@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { Button } from "@/components/ui/button"
+import { Button } from "../../../components/ui/button"
 import{
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@/components/ui/popover"
-import { ResumeContext } from "@/context/ResumeContext"
+} from "../../../components/ui/popover"
+import { ResumeContext } from "../../../context/ResumeContext"
 import { LayoutGrid } from "lucide-react"
 import { useContext, useState } from "react"
 import { useParams } from "react-router-dom"

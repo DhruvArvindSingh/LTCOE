@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { ResumeContext } from "@/context/ResumeContext";
+import { Button } from "../../../../components/ui/button";
+import { Textarea } from "../../../../components/ui/textarea";
+import { ResumeContext } from "../../../../context/ResumeContext";
 import { useContext, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Brain, Loader2 } from "lucide-react";
 import { AIchatSession } from "../../../../../service/AiModel";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "@/utils/firebase_config";
+import { app } from "../../../../utils/firebase_config";
 
 const prompt = `Given the job title "{jobTitle}", provide three job summary suggestions for a resume. Each suggestion should be in JSON format with fields "experience_level" (values can be "Fresher", "Mid-level", "Experienced") and "summary" (a brief summary). Output an array of JSON objects.`;
 
