@@ -8,15 +8,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 // Import icons from React Icons for a hamburger menu (FaBars) and a close icon (FaTimes).
 
 const Navbar = ({ onSearch }) => { 
-  // Define the Navbar component. It accepts a prop 'onSearch' which is a function to handle search submission.
-
-  const [jobTitle, setJobTitle] = useState(''); 
-  // Define a state variable 'jobTitle' to store the search input for job title.
-
-  const [location, setLocation] = useState(''); 
-  // Define a state variable 'location' to store the search input for location.
-
-  const [datePosted, setDatePosted] = useState('all'); 
+  // Define the Navbar component. It accepts a prop 'onSearch' which is a function to handle search submission. 
   // Define a state variable 'datePosted' to store the selected filter for when the job was posted. Default is 'all'.
 
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
@@ -46,7 +38,7 @@ const Navbar = ({ onSearch }) => {
     <nav className="bg-white p-4 shadow-lg fixed top-0 w-full z-10"> 
       {/* Define the navbar container with Tailwind CSS classes for styling: fixed at the top, full width, with a shadow effect. */}
 
-      <div className="container mx-auto flex justify-between items-center"> 
+      <div className="mx-auto flex justify-between items-center"> 
         {/* Create a container for the navbar content, with space between elements and centered vertically. */}
 
         <div className="text-white text-2xl font-bold logo logo-color"><a href="/">JobPortal</a></div> 

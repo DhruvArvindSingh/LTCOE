@@ -26,7 +26,7 @@ const Job_main = ({ searchParams }) => {
             page: currentPage,
           },
           headers: {
-            "X-RapidAPI-Key": "f68c705fc6mshf8df02479b40fb0p1a9c52jsn1f2a7eff31bb", // Replace with your API key
+            "X-RapidAPI-Key": "1d625a00e6msh9523d4e83fe1b82p176cadjsn060f3d518945", // Replace with your API key
             "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
           },
         });
@@ -59,7 +59,7 @@ const Job_main = ({ searchParams }) => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto mt-20">
+      <div className="mx-auto mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
           {loading ? (
             Array.from({ length: 8 }, (_, index) => <Skeleton key={index} />)
